@@ -1,5 +1,6 @@
-package com.nicekkong.bootservice.webservice.domain;
+package com.nicekkong.bootservice.webservice.dto;
 
+import com.nicekkong.bootservice.webservice.domain.Posts;
 import lombok.*;
 
 @Getter @Setter

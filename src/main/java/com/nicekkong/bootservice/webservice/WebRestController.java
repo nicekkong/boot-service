@@ -1,7 +1,8 @@
 package com.nicekkong.bootservice.webservice;
 
-import com.nicekkong.bootservice.webservice.domain.PostSaveRequestDto;
+import com.nicekkong.bootservice.webservice.dto.PostSaveRequestDto;
 import com.nicekkong.bootservice.webservice.domain.PostsRepository;
+import com.nicekkong.bootservice.webservice.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.Map;
 public class WebRestController {
 
     private final PostsRepository postsRepository;
+    private final PostsService postsService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -21,9 +23,9 @@ public class WebRestController {
 
     @PostMapping("/posts")
     public Map savePosts(@RequestBody PostSaveRequestDto dto) {
-        postsRepository.save(dto.toEntity());
+        postsService.save(dto);
 
-        HashMap<String, String> result = new HashMap<String, String>();
+        HashMap<String, String> result = new HashMap<>();
         result.put("result", "success");
         
         return result;
