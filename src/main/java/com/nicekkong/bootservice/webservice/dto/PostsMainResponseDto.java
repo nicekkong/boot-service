@@ -20,7 +20,8 @@ public class PostsMainResponseDto {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.author = entity.getAuthor();
-        this.content = toStringDateTime(entity.getUpdDate());
+        this.content = entity.getContent();
+        this.updDate = toStringDateTime(entity.getUpdDate());
     }
 
     private String toStringDateTime(LocalDateTime updDate) {

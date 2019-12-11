@@ -1,6 +1,6 @@
 package com.nicekkong.bootservice.webservice.service;
 
-import com.nicekkong.bootservice.webservice.dto.PostSaveRequestDto;
+import com.nicekkong.bootservice.webservice.dto.PostsSaveRequestDto;
 import com.nicekkong.bootservice.webservice.domain.Posts;
 import com.nicekkong.bootservice.webservice.domain.PostsRepository;
 import org.junit.After;
@@ -30,7 +30,7 @@ public class PostsServiceTest {
     @Test
     public void testSave() {
         // given
-        PostSaveRequestDto dto = PostSaveRequestDto.builder()
+        PostsSaveRequestDto dto = PostsSaveRequestDto.builder()
                 .author("nicekkong@gmail.com")
                 .content("First Contents for test")
                 .title("Test Title").build();

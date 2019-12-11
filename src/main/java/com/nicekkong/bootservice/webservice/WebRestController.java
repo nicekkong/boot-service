@@ -1,6 +1,6 @@
 package com.nicekkong.bootservice.webservice;
 
-import com.nicekkong.bootservice.webservice.dto.PostSaveRequestDto;
+import com.nicekkong.bootservice.webservice.dto.PostsSaveRequestDto;
 import com.nicekkong.bootservice.webservice.domain.PostsRepository;
 import com.nicekkong.bootservice.webservice.service.PostsService;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public Map savePosts(@RequestBody PostSaveRequestDto dto) {
+    public Map savePosts(@RequestBody PostsSaveRequestDto dto) {
         postsService.save(dto);
 
         HashMap<String, String> result = new HashMap<>();

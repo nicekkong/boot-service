@@ -1,6 +1,6 @@
 package com.nicekkong.bootservice.webservice.service;
 
-import com.nicekkong.bootservice.webservice.dto.PostSaveRequestDto;
+import com.nicekkong.bootservice.webservice.dto.PostsSaveRequestDto;
 import com.nicekkong.bootservice.webservice.domain.PostsRepository;
 import com.nicekkong.bootservice.webservice.dto.PostsMainResponseDto;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ public class PostsService {
     private PostsRepository postsRepository;
 
     @Transactional
-    public Long save(PostSaveRequestDto dto) {
+    public Long save(PostsSaveRequestDto dto) {
         return postsRepository.save(dto.toEntity()).getId();
     }
 
