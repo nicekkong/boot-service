@@ -12,4 +12,10 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 
     @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
     Stream<Posts> findAllDesc();
+
+    @Transactional
+    @Modifying
+    @Query("DELETE FROM Posts WHERE id = :id")
+    void deleteAllByIdInQuery(@Param("ids") List<Long> ids);
+
 }
